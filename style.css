@@ -44,7 +44,6 @@ input{
     border-bottom: 1px solid gray;
     font-size: 15px;
     padding-left: 1.2rem;
-    padding-bottom: 0.1rem;
     z-index: 10;
 }
 
@@ -56,6 +55,7 @@ input{
 .input-group i{
     position: absolute;
     color: black;
+    bottom: 1.95em;
 }
 
 input:focus{
@@ -73,9 +73,9 @@ label{
     color:#757575;
     position:relative;
     left:1.2em;
-    top:0em;
+    top:-1.15em;
     cursor:auto;
-    transition:0.3s ease all;
+    transition:0.25s all;
 }
 
 input:focus~label,input:not(:placeholder-shown)~label{
@@ -112,7 +112,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     background:rgb(0, 0, 225);
     color:white;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.25s;
 }
 
 .button:hover{
@@ -138,7 +138,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     cursor:pointer;
     border:2px solid rgb(0, 0, 225);
     margin:0 15px;
-    transition:0.2s;
+    transition:0.25s;
 }
 
 .icons i:hover{
