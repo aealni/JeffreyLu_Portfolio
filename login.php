@@ -11,7 +11,7 @@
 <body class="h-screen" style="background: radial-gradient(circle, #dae0eb, #F0FFFF);">
     <div id="signUpForm" class=" container bg-[#F5F5DC] w-[500px] p-8 mx-auto my-12 rounded-xl shadow-2xl border border-gray-300">
         <h1 class="form-title text-center font-bold py-4 mb-2 text-4xl">Register</h1>
-        <form method="post" action="" class="space-y-6">
+        <form method="post" action="register.php" class="space-y-6">
             <!-- First Name -->
             <div class="input-group relative w-full">
                 <input type="text" name="fName" id="fName" placeholder="First Name" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg "> 
@@ -36,7 +36,7 @@
                 <label for="password" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-base transition-all duration-200 peer-focus:-translate-y-8 peer-focus:text-hsl-327 peer-focus:text-sm peer-focus:underline z-0 peer-placeholder-shown:translate-y--2 peer-valid:-translate-y-8 peer-valid:text-hsl-327 peer-valid:text-sm peer-valid:underline cursor-text">Password</label>
             </div>
     
-            <input type="submit" id="signUpButton" class="button w-full py-2 bg-blue-600 text-white rounded-md cursor-pointer transition duration-200 hover:bg-blue-500" value="Sign Up" name="signUp">
+            <input type="submit" class="button w-full py-2 bg-blue-600 text-white rounded-md cursor-pointer transition duration-200 hover:bg-blue-500" value="Sign Up" name="signUp">
         </form>
     
         <p class="or text-center text-lg my-4">-----or-----</p>
@@ -54,7 +54,7 @@
     <!-- Sign In Form -->
     <div id="signInForm" class="container bg-[#F5F5DC] w-[500px] p-8 mx-auto my-12 rounded-xl shadow-2xl border border-gray-300 hidden">
         <h1 class="form-title text-center font-bold text-4xl py-4 mb-2">Sign In</h1>
-        <form method="post" action="" class="space-y-6">
+        <form method="post" action="register.php" class="space-y-6">
             <!-- Username -->
             <div class="input-group relative w-full">
                 <input type="text" name="username" id="username1" placeholder="Username" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg "> 
@@ -71,7 +71,7 @@
                 <a href="#" class="text-blue-600 hover:underline">Recover Password</a>
             </p>
     
-            <input type="submit" id = "signInButton" class="button w-full py-2 bg-blue-600 text-white rounded-md cursor-pointer transition duration-200 hover:bg-blue-500" value="Sign In" name="signIn">
+            <input type="submit" class="button w-full py-2 bg-blue-600 text-white rounded-md cursor-pointer transition duration-200 hover:bg-blue-500" value="Sign In" name="signIn">
         </form>
     
         <p class="or text-center text-lg my-4">-----or-----</p>
