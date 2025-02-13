@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="h-screen" style="background: radial-gradient(circle, #dae0eb, #F0FFFF);">
-    <div id="signUpForm" class=" container bg-[#F5F5DC] w-[500px] p-8 mx-auto my-12 rounded-xl shadow-2xl border border-gray-300">
+    <div id="signUpForm" class="container bg-[#F5F5DC] w-[500px] p-8 mx-auto my-12 rounded-xl shadow-2xl border border-gray-300">
         <h1 class="form-title text-center font-bold py-4 mb-2 text-4xl">Register</h1>
         <form method="post" action="register.php" class="space-y-6">
             <!-- First Name -->
@@ -32,8 +32,11 @@
     
             <!-- Password -->
             <div class="input-group relative w-full">
-                <input type="text" name="password" id="password" placeholder="Password" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg "> 
+                <input type="password" name="password" id="password" placeholder="Password" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg"> 
                 <label for="password" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-base transition-all duration-200 peer-focus:-translate-y-8 peer-focus:text-hsl-327 peer-focus:text-sm peer-focus:underline z-0 peer-placeholder-shown:translate-y--2 peer-valid:-translate-y-8 peer-valid:text-hsl-327 peer-valid:text-sm peer-valid:underline cursor-text">Password</label>
+                <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-xl" id="togglePassword" aria-label="Show password">
+                    <i class="fas fa-eye" id="eyeIcon"></i>
+                </button>
             </div>
     
             <input type="submit" class="button w-full py-2 bg-blue-600 text-white rounded-md cursor-pointer transition duration-200 hover:bg-blue-500" value="Sign Up" name="signUp">
@@ -63,8 +66,11 @@
     
             <!-- Password -->
             <div class="input-group relative w-full">
-                <input type="text" name="password" id="password1" placeholder="Password" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg "> 
+                <input type="password" name="password" id="password1" placeholder="Password" required class="peer w-full bg-transparent border-b border-gray-300 pl-2.5 pt-2 text-sm focus:outline-none placeholder-transparent z-10 font-['Roboto'] text-lg "> 
                 <label for="password1" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-base transition-all duration-200 peer-focus:-translate-y-8 peer-focus:text-hsl-327 peer-focus:text-sm peer-focus:underline z-0 peer-placeholder-shown:translate-y--2 peer-valid:-translate-y-8 peer-valid:text-hsl-327 peer-valid:text-sm peer-valid:underline cursor-text">Password</label>
+                <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-xl" id="togglePassword1" aria-label="Show password">
+                    <i class="fas fa-eye" id="eyeIcon1"></i>
+                </button>
             </div>
     
             <p class="recover text-right text-sm mb-4">
@@ -85,7 +91,7 @@
             Don't have an account yet? <button id="signUp" class="text-blue-600 hover:underline">Sign Up</button>
         </p>
     </div>
+
     <script src="script.js"></script>
-    
 </body>
 </html>
