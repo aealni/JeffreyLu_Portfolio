@@ -3,10 +3,5 @@
       "api/*.php": {
         "runtime": "vercel-php@0.7.3"
       }
-    },
-    "env": {
-        "dsn" : "pgsql:host=ep-autumn-dew-a8dqtpp9-pooler.eastus2.azure.neon.tech;port=5432;dbname=neondb",
-        "username" : "neondb_owner",
-        "password" : "npg_FU9R7nBsNKcw"
-  }
+    }
   }
