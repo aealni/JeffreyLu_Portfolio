@@ -1,21 +1,30 @@
 <?php
-// Fetching connection details from environment variables
-$dsn = $_ENV['dsn'];
-$username = $_ENV['username'];
-$password = $_ENV['password'];
+// Get the DATABASE_URL_UNPOOLED from environment variables
+$databaseUrl = getenv('DATABASE_URL_UNPOOLED');
 
-// PDO options for error handling and fetching
-$options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-);
+if (!$databaseUrl) {
+    die("DATABASE_URL_UNPOOLED is not set in the environment variables.");
+}
+
+// Parse the PostgreSQL connection URL
+$parsedUrl = parse_url($databaseUrl);
+
+$host = $parsedUrl['host'];
+$port = $parsedUrl['port'] ?? 5432; // Default PostgreSQL port
+$user = $parsedUrl['user'];
+$password = $parsedUrl['pass'];
+$dbname = ltrim($parsedUrl['path'], '/');
+
+$dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require";
 
 try {
-    // Establishing the connection using PDO
-    $pdo = new PDO($dsn, $username, $password, $options);
-    echo "Connected to the database successfully!";
+    $pdo = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,  
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
+    
+    echo "Connected successfully!";
 } catch (PDOException $e) {
-    // Handling connection errors
     echo "Connection failed: " . $e->getMessage();
 }
 ?>

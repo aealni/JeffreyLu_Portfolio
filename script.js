@@ -4,14 +4,14 @@ const signUpForm = document.getElementById('signUpForm')//form
 const signInForm = document.getElementById('signInForm')
 
 signUpButton.addEventListener('click', function(){
-    signInForm.style.display="none";
-    signUpForm.style.display="block";
+    signInForm.classList.add('hidden');
+    signUpForm.classList.remove('hidden');
+});
 
-})
 signInButton.addEventListener('click', function(){
-    signInForm.style.display="block";
-    signUpForm.style.display="none"; 
-})
+    signInForm.classList.remove('hidden');
+    signUpForm.classList.add('hidden');
+});
 
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get('registered') === 'true') {
