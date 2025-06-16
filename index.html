@@ -9,50 +9,96 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="h-screen bg-gray-50 text-gray-900 w-[600px] flex justify-center items-center mx-auto">
-    <section class="container mx-auto p-6">
-        <!-- Profile Image -->
+<body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col justify-start items-center">
+        <section class="w-full max-w-[700px] mx-auto flex flex-col items-center px-4 sm:px-6">
+
+        <div class="mt-8 w-full mb-8">
+            <nav class="bg-blue-100 border border-blue-300 rounded-lg px-6 py-4 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <span class="font-medium text-blue-700 text-lg">Pages</span>
+                    <button id="navbar-toggle" class="text-blue-700 hover:text-blue-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div id="navbar-links" class="flex flex-row gap-4 mt-4 hidden">
+                    <!-- <a href="/api/login.php" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                        Login
+                    </a> -->
+                    <a href="/pages/reports.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                        Reports
+                    </a>
+                    <a href="/pages/projects.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                        Projects
+                    </a>
+                    <a href="/assets/JL_resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                        Resume
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <script>
+            const toggle = document.getElementById('navbar-toggle');
+            const links = document.getElementById('navbar-links');
+            links.classList.add('transition-all', 'duration-400', 'ease-in-out', 'overflow-hidden');
+            links.style.maxHeight = "0";
+            links.classList.add('hidden');
+
+            let isTransitioning = false;
+
+            toggle.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                if (links.classList.contains('hidden')) {
+                    links.classList.remove('hidden');
+                    void links.offsetWidth;
+                    links.style.maxHeight = "125px";
+                } else {
+                    links.style.maxHeight = "0";
+                }
+            });
+
+            links.addEventListener('transitionend', () => {
+                if (links.style.maxHeight === "0px" || links.style.maxHeight === "0") {
+                    links.classList.add('hidden');
+                } else {
+                    links.style.maxHeight = "125px";
+                }
+                isTransitioning = false;
+            });
+        </script>
+
         <a href="https://www.linkedin.com/in/jeffreylu2222" target="_blank">
             <img src="/assets/profile.png" alt="Profile photo" class="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5" width="160" height="160"/>
         </a>
 
-        <h1 class="mb-8 text-2xl font-medium tracking-tight">About Me</h1>
+        <h1 class="mb-8 text-2xl font-medium tracking-tight text-center">About Me</h1>
 
-        <div class="prose prose-neutral dark:prose-invert">
-            <p>
+        <div class="prose prose-neutral dark:prose-invert mx-auto text-center space-y-8">
+            <p class="mx-auto">
                 Hi! My name is Jeffrey Lu. I am pursuing a B.S. in Computer Science at 
                 the University of Illinois Urbana-Champaign. My interests lie at the 
                 intersection of computer science and innovation, and I am passionate 
                 about leveraging technology to solve real-world problems.
             </p>
-            <p>
+            <p class="mx-auto">
                 During my academic journey, I’ve worked on diverse projects ranging from 
                 software development to data-driven research, exploring fields such as AI, 
                 machine learning, and simulations. I enjoy diving deep into complex challenges, 
                 whether it’s through hands-on coding, algorithm optimization, or uncovering 
                 insights from data.
             </p>
-            <p>
+            <p class="mx-auto"></p>
                 Beyond academics, I’ve had the privilege of mentoring students, engaging in 
                 community outreach, and sharing my passion for learning through programs I’ve 
                 developed. When I’m not coding, you’ll often find me immersed in strategy or 
                 rhythm games, stargazing to explore my love for astronomy, reading about 
                 emerging technologies, or discovering new ways to challenge myself.
             </p>
-            <p>
+            <p class="mx-auto"></p>
                 Feel free to check out my projects to learn more about my work and interests!
             </p>
-            
         </div>
-        <a href="/api/login.php" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-8 inline-block">
-            Login
-        </a>
-        <a href="/pages/projects.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-8 inline-block">
-            Projects
-        </a>
-        <a href="/assets/JL_resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-8 inline-block">
-            Resume
-        </a>
+        
     </section>
 </body>
 </html>
