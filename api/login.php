@@ -92,6 +92,6 @@
         </p>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="/api/script.js"></script>
 </body>
 </html>
