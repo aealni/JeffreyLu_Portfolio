@@ -9,69 +9,42 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col justify-start items-center">
-        <section class="w-full max-w-[700px] mx-auto flex flex-col items-center px-4 sm:px-6">
 
-        <div class="mt-8 w-full mb-8">
-            <nav class="bg-blue-100 border border-blue-300 rounded-lg px-6 py-4 shadow-sm">
-                <div class="flex items-center justify-between">
-                    <span class="font-medium text-blue-700 text-lg">Pages</span>
-                    <button id="navbar-toggle" class="text-blue-700 hover:text-blue-900 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                <div id="navbar-links" class="flex flex-row gap-4 mt-4 hidden">
-                    <!-- <a href="/api/login.php" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Login
-                    </a> -->
-                    <a href="/pages/connect.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Connect
-                    </a>
-                    <a href="/pages/reports.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Reports
-                    </a>
-                    <a href="/pages/projects.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Projects
-                    </a>
-                    <a href="/assets/JL_resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Resume
-                    </a>
-                </div>
-            </nav>
+<header class="w-full bg-blue-500 text-white p-6">
+    <nav class="bg-blue-100 border border-blue-300 rounded-lg px-6 py-4 shadow-sm max-w-7xl mx-auto">
+        <div class="flex items-center justify-between">
+            <span class="font-medium text-blue-700 text-lg">Pages</span>
+            <button id="navbar-toggle" class="text-blue-700 hover:text-blue-900 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-        <script>
-            const toggle = document.getElementById('navbar-toggle');
-            const links = document.getElementById('navbar-links');
-            links.classList.add('transition-all', 'duration-400', 'ease-in-out', 'overflow-hidden');
-            links.style.maxHeight = "0";
-            links.classList.add('hidden');
+        <div id="navbar-links" class="flex flex-row gap-4 mt-4 hidden">
+            <!-- <a href="/api/login.php" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                Login
+            </a> -->
+            <a href="/pages/connect.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                Connect
+            </a>
+            <a href="/pages/reports.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                Reports
+            </a>
+            <a href="/pages/projects.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                Projects
+            </a>
+            <a href="/assets/JL_resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
+                Resume
+            </a>
+        </div>
+    </nav>
+    <script src="../menu.js"></script>
+    <h1 class="text-4xl font-semibold text-center mt-6">About Me</h1>
+</header>
 
-            let isTransitioning = false;
-
-            toggle.addEventListener('click', () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                if (links.classList.contains('hidden')) {
-                    links.classList.remove('hidden');
-                    void links.offsetWidth;
-                    links.style.maxHeight = "125px";
-                } else {
-                    links.style.maxHeight = "0";
-                }
-            });
-
-            links.addEventListener('transitionend', () => {
-                if (links.style.maxHeight === "0px" || links.style.maxHeight === "0") {
-                    links.classList.add('hidden');
-                } else {
-                    links.style.maxHeight = "125px";
-                }
-                isTransitioning = false;
-            });
-        </script>
+<body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col justify-start items-center">
+        <section class="w-full max-w-[700px] mx-auto flex flex-col items-center px-4 sm:px-6 mt-4">
 
         <div class="w-full mb-8">
-            <h1 class="mb-4 text-2xl font-medium tracking-tight text-left w-full">About Me</h1>
+
 
             <div class="clearfix space-y-4"> 
                 <a href="https://www.linkedin.com/in/jeffreylu2222" target="_blank">
