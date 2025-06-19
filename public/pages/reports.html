@@ -3,44 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Reports</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<header class="w-full bg-gray-500 text-white p-6 text-center">
-    <nav class="bg-blue-100 border border-blue-300 rounded-lg px-6 py-4 shadow-sm max-w-7xl mx-auto">
-                <div class="flex items-center justify-between">
-                    <span class="font-medium text-blue-700 text-lg">Pages</span>
-                    <button id="navbar-toggle" class="text-blue-700 hover:text-blue-900 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                <div id="navbar-links" class="flex flex-row gap-4 mt-4 hidden">
-                    <!-- <a href="/api/login.php" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Login
-                    </a> -->
-                    <a href="/index.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        About Me
-                    </a>
-                    <a href="/pages/connect.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Connect
-                    </a>
-                    <a href="/pages/projects.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Projects
-                    </a>
-                    <a href="/pages/blog.html" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Blog
-                    </a>
-                    <a href="/assets/JL_resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 inline-block">
-                        Resume
-                    </a>
-                </div>
-            </nav>
-        <script src="/scripts/menu.js"></script>
-        <h1 class="text-4xl font-semibold mt-6">My Reports</h1>
-        <p class="mt-2">Click on a link to learn more</p>
-    </header>
+<header id="header-placeholder" class="w-full bg-orange-500 text-white p-6">
+    <script>
+        const headerTitle = "Reports";
+
+        fetch("/components/nav.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("header-placeholder").innerHTML = html;
+                document.getElementById("page-title").textContent = headerTitle;
+                const script = document.createElement('script');
+                script.src = "/scripts/menu.js";
+                document.body.appendChild(script);
+            });
+    </script>
+</header>
 <body class="bg-gray-50 font-sans antialiased">
 
     <main class="mt-12 px-4">
