@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<header id="header-placeholder" class="w-full bg-red-500 text-white p-6">
+    <script>
+        const headerTitle = "Stochastic Gradient Descent";
+
+        fetch("/components/nav.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("header-placeholder").innerHTML = html;
+                document.getElementById("page-title").textContent = headerTitle;
+                const script = document.createElement('script');
+                script.src = "/scripts/menu.js";
+                document.body.appendChild(script);
+            });
+    </script>
+</header>
+
+
+<body class="bg-gray-50 font-sans antialiased">
+
+    <main class="mt-12 px-4 mb-6">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow">
+
+            <p class="mb-4">
+                This is a project for my CS 361 class at UIUC. In this project, I explored optimization algorithms commonly used in machine learning, focusing on gradient-based methods to improve model performance.
+            </p>
+
+            <p class="mb-4">
+                Gradient descent is a core technique in machine learning for minimizing errors by iteratively adjusting a model's parameters. You can think of it like hiking downhill in the fog — you take small steps following the slope until you reach the bottom, where the model performs best. This is done by following the negative of the gradient, which points in the direction of steepest descent.
+            </p>
+
+            <p class="mb-4">
+                But there's a catch. Standard gradient descent, often called batch gradient descent, requires scanning through the entire dataset before making each update. With large datasets, this quickly becomes slow and impractical.
+            </p>
+
+            <p class="mb-4">
+                To solve this, we use Stochastic Gradient Descent (SGD). Instead of waiting to process all the data, SGD makes updates using just one data point or a small random batch at a time. This makes it much faster and introduces helpful randomness that can prevent the model from getting stuck in shallow local minima.
+            </p>
+
+            <p class="mb-4">
+                Still, even SGD has limitations — noisy updates and tricky learning rate tuning can slow things down. That's where more advanced optimizers like Adam come into play. Adam, short for Adaptive Moment Estimation, builds on SGD by keeping track of both the gradient's direction and its historical averages, allowing it to smooth updates and adjust learning rates automatically for each parameter.
+            </p>
+
+            <p class="mb-4">
+                Thanks to these optimizations, Adam is one of the go-to algorithms in deep learning today, offering fast convergence and reliable performance, especially in complex, high-dimensional problems.
+            </p>
+            <div class="flex justify-center items-center space-x-2 mt-6">
+                <a href="/assets/CS361_Project_SP25.pdf" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300">Project Prompt</a>
+                <a href="/assets/StochasticGradientDescent.pdf" target="_blank" class="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">View Writeup</a>
+                <a href=" " target="_blank" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">View Code</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
