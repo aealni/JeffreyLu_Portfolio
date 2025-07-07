@@ -8,21 +8,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<header id="header-placeholder" class="w-full bg-pink-500 text-white p-6">
-    <script>
-        const headerTitle = "Blog";
-
-        fetch("/components/nav.html")
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById("header-placeholder").innerHTML = html;
-                document.getElementById("page-title").textContent = headerTitle;
-                const script = document.createElement('script');
-                script.src = "/scripts/menu.js";
-                document.body.appendChild(script);
-            });
-    </script>
+<header id="header-placeholder" class="w-full bg-pink-500 text-white p-6 sticky top-0 z-50">
+    <div id="nav-container"></div>
 </header>
+
+<script>
+    const headerTitle = "Blog";
+
+    fetch("/components/nav.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("nav-container").innerHTML = html;
+            document.getElementById("page-title").textContent = headerTitle;
+            const script = document.createElement('script');
+            script.src = "/scripts/menu.js";
+            document.body.appendChild(script);
+        });
+</script>
 
 
 </html>

@@ -10,21 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
-<header id="header-placeholder" class="w-full bg-blue-500 text-white p-6">
-    <script>
-        const headerTitle = "About Me";
-
-        fetch("/components/nav.html")
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById("header-placeholder").innerHTML = html;
-                document.getElementById("page-title").textContent = headerTitle;
-                const script = document.createElement('script');
-                script.src = "/scripts/menu.js";
-                document.body.appendChild(script);
-            });
-    </script>
+<header id="header-placeholder" class="w-full bg-blue-500 text-white p-6 sticky top-0 z-50">
+    <div id="nav-container"></div>
 </header>
+
+<script>
+    const headerTitle = "About Me";
+
+    fetch("/components/nav.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("nav-container").innerHTML = html;
+            document.getElementById("page-title").textContent = headerTitle;
+            const script = document.createElement('script');
+            script.src = "/scripts/menu.js";
+            document.body.appendChild(script);
+        });
+</script>
 
 <body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col justify-start items-center">
         <section class="w-full max-w-[700px] mx-auto flex flex-col items-center px-4 sm:px-6 mt-4">
@@ -64,7 +66,7 @@
                     rhythm games, stargazing to explore my love for astronomy, reading novels and manga, biking, or simply discovering new ways to challenge myself.
                 </p>
                 <p>
-                    Feel free to check out my projects to learn more about my work and interests!
+                    Feel free to check out my projects and research to learn more about my work and interests!
                 </p>
                 <p>
                     <b> Note that most of this website is still under construction, please bare with
