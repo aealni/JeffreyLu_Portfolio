@@ -29,12 +29,37 @@
 
 
 <body class="bg-gray-50 font-sans antialiased">
-
+    
     <main class="mt-12 px-4 mb-6">
         <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow">
-            <p class="mb-4"> Description in progress. </p>
+            <p class="mb-4">
+            This project started after I got back into watching the NBA with some friends. Naturally, we started betting on game outcomes and player performances, leading us to discover player props on platforms like Underdog (since traditional sports gambling was still off-limits for us at the time). Given how much player and team data is publicly available, we figured there had to be solid mathematical or machine learning models to leverage it.
+            </p>
+
+            <p class="mb-4">
+            We explored several different modeling strategies (many of which are documented in our earlier brainstorming folder). We began with traditional machine learning models, assuming that structured historical data—minutes, matchups, recent performance—could help train a supervised model to predict overs and unders. While it somewhat worked, the model proved highly volatile and sensitive, as well as a taking up a lot of work time regarding data structure, thus we put in on the backburner for the future when learn more about ML and data sorting/cleaning.            </p>
+
+            <p class="mb-4">
+            We also experimented with ARIMA time series models to forecast individual stat lines (e.g., points, assists) based on recent trends. While ARIMA was interpretable and straightforward, it struggled with context changes like roster shifts, defensive matchups, and team matchups - it lacked the correlations of performance between each player.
+            </p>
+
+            <p class="mb-4">
+            Thus, we then explored identifying correlations between player props—e.g., how rebounds and blocks might move together for a big man, or how a star player’s scoring might affect teammates’ assist opportunities, or how one player has the tools to specifically lock down one other player. These insights fed into feature engineering for more complex models.
+            </p>
+
+            <p class="mb-4">
+            We eventually moved to more expressive models like random forests, which performed well when trained on enriched feature sets that included opponent defensive ratings, pace, and historical performance under similar conditions. However, these models often felt more heuristic than analytical, relying more on pattern recognition than a grounded understanding of underlying game dynamics.
+            </p>
+
+            <p class="mb-4">
+            A large portion of our time was spent experimenting with distributions. We modeled player stat lines as probability distributions and tested various fitting techniques—averaging multiple distributions and using goodness-of-fit metrics to improve predictive reliability. These probabilistic approaches made it easier to set thresholds for risk/reward across props. This was also unsuitable for use by itself, as it felt more of a guessing -game : why does one player's rebounds follow a certain distribution that another player's doesn't?
+            </p>
+
+            <p class="mb-4">
+            During the NBA season, we placed a number of bets based on aggregated predictions from all the models—applying a sort of Wisdom of Crowds approach across algorithms. By combining their outputs, we achieved a 20% profit over the latter half of the season. While modest, generating any profit in the notoriously difficult world of sports betting was an encouraging sign. With the NBA season on pause, development has slowed, but we're planning to resume experimentation once games pick back up in the fall. Currently, my eyes are on RNNs and sequential models to capture temporal dependencies in player performance more effectively (as most of our data is time-related).
+            </p>
             <div class="flex justify-center items-center space-x-2 mt-6">
-                <a href="https://github.com/njchen8/Sports-Analytics" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300">View Progress</a>
+                <a href="https://github.com/njchen8/Sports-Analytics" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300">View Project</a>
         </div>
     </main>
 
