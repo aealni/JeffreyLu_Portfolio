@@ -7,22 +7,25 @@ links.classList.add('hidden');
 let isTransitioning = false;
 
 toggle.addEventListener('click', () => {
-if (isTransitioning) return;
-isTransitioning = true;
-if (links.classList.contains('hidden')) {
-    links.classList.remove('hidden');
-    void links.offsetWidth;
-    links.style.maxHeight = "125px";
-} else {
-    links.style.maxHeight = "0";
-}
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    if (links.classList.contains('hidden')) {
+        links.classList.remove('hidden');
+        void links.offsetWidth; 
+
+        const fullHeight = links.scrollHeight + "px"; 
+        links.style.maxHeight = fullHeight;
+    } else {
+        links.style.maxHeight = "0";
+    }
 });
 
 links.addEventListener('transitionend', () => {
-if (links.style.maxHeight === "0px" || links.style.maxHeight === "0") {
-    links.classList.add('hidden');
-} else {
-    links.style.maxHeight = "125px";
-}
-isTransitioning = false;
+    if (links.style.maxHeight === "0px" || links.style.maxHeight === "0") {
+        links.classList.add('hidden');
+    } else {
+        links.style.maxHeight = links.scrollHeight + "px"; 
+    }
+    isTransitioning = false;
 });
